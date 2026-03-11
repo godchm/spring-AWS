@@ -12,8 +12,10 @@ AWS Budgets
 ![img_2.png](images/img_2.png)
 
 2. RDS 보안 그룹 스크린샷
-![img.png](img.png)![img_1.png](images/img_1.png)
-![img_1.png](img_1.png)![img_2.png](images/img_2.png)
+![img.png](img.png)
+![img_1.png](img_1.png)
+
+
 
 ## LV 3 - 프로필 사진 기능 추가와 권한 관리
 1. POST /api/members/{id}/profile-image
