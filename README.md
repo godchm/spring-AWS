@@ -12,8 +12,7 @@ AWS Budgets
 ![img_2.png](images/img_2.png)
 
 2. RDS 보안 그룹 스크린샷
-![img.png](img.png)
-![img_1.png](img_1.png)
+![img_2.png](img_2.png)
 
 
 
@@ -43,4 +42,7 @@ AWS Budgets
 -필수 레벨 Lv 3 완료
 -필수 레벨 이미지 자료 RREADME에 저장.
 
+
+### 2026 03.11 17.30
+-README 수정.
 
