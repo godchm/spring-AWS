@@ -9,13 +9,12 @@ AWS Budgets
 
 ## LV 2 - DB 분리 및 보안 연결하기
 1. Actuator Info 엔드포인트 URL
-![img_2.png](images/img_2.png)
+![img_5.png](img_5.png)
 
 2. RDS 보안 그룹 스크린샷
 ![img_2.png](img_2.png)
 
-
-
+   
 ## LV 3 - 프로필 사진 기능 추가와 권한 관리
 1. POST /api/members/{id}/profile-image
 ![img_3.png](images/img_3.png)
