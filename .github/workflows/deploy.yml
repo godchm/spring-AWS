@@ -25,8 +25,7 @@ jobs:
         run: ./gradlew test
         env:
           SPRING_PROFILES_ACTIVE: local
-          local_DBNAME: sa
-          local_PASSWORD:
+
 
       - name: Build JAR
         run: ./gradlew bootJar
