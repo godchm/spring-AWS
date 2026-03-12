@@ -32,7 +32,10 @@
 
 ## LV 4 - Docker & CI/CD 파이프라인 구축
 ### Github Actions 성공 이미지
-![img.png](img.png)
+![img.png](images/img16.png)
+
+### EC2 터미널 이미지
+![img_1.png](images/img17.png)
 
 # 구현 일정 
 
@@ -66,4 +69,9 @@
 
 
 ### 2026 03.12 19:06
-
+**구현 기능**
+- 도전 Lv 4 완료
+  
+**특이사항**
+- workflow 코드에 변수명을 잘못 기입한 문제를 뒤 늦게 깨달아서 오류를 수정하는데 4시간을 소요 했다. 
+git Action Screts에 EC2_USER라고 설정하고, workflow에는 EC2_USERNAME이라고 했었다.
