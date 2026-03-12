@@ -75,3 +75,8 @@
 **특이사항**
 - workflow 코드에 변수명을 잘못 기입한 문제를 뒤 늦게 깨달아서 오류를 수정하는데 4시간을 소요 했다. 
 git Action Screts에 EC2_USER라고 설정하고, workflow에는 EC2_USERNAME이라고 했었다.
+
+
+### 2026 03.12 20:50
+**구현 기능**
+-application-local 수정
