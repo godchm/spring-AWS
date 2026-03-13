@@ -52,7 +52,7 @@ public class MemberController {
         }
     }
 
-
+//
     @PostMapping("/api/members/{memberId}/profile-image")
     public ResponseEntity<FileUploadResponse> upload(
             @PathVariable Long memberId,
