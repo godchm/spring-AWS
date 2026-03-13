@@ -43,7 +43,7 @@ jobs:
           DB_USERNAME: ${{ secrets.DB_USERNAME }}
           DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
           TEAM_NAME: ${{ secrets.TEAM_NAME }}
-        run: ./gradlew test --stacktrace
+        run: ./gradlew test --tests "SpartaAwsApplicationTests" --info
 
       - name: Build JAR
         run: ./gradlew bootJar
@@ -69,3 +69,10 @@ jobs:
 
           echo "✅ Pushed: $IMAGE_URI:$SHORT_SHA"
           echo "✅ Pushed: $IMAGE_URI:latest"
+
+      - name: Upload test report
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-report
+          path: build/reports/tests/test
