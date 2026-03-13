@@ -38,7 +38,12 @@ jobs:
             ${{ runner.os }}-gradle-
 
       - name: Run tests
-        run: ./gradlew test
+        env:
+          DB_URL: ${{ secrets.DB_URL }}
+          DB_USERNAME: ${{ secrets.DB_USERNAME }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          TEAM_NAME: ${{ secrets.TEAM_NAME }}
+        run: ./gradlew test --stacktrace
 
       - name: Build JAR
         run: ./gradlew bootJar
