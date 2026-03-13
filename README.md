@@ -52,7 +52,7 @@
 ### 2026 03.11 16:03
 **구현 기능**
 - 필수 레벨 Lv 3 완료
-- 필수 레벨 이미지 자료 RREADME에 저장.
+- 필수 레벨 이미지 자료 README에 저장.
 
 
 ### 2026 03.11 17:30
@@ -74,7 +74,7 @@
   
 **특이사항**
 - workflow 코드에 변수명을 잘못 기입한 문제를 뒤 늦게 깨달아서 오류를 수정하는데 4시간을 소요 했다. 
-git Action Screts에 EC2_USER라고 설정하고, workflow에는 EC2_USERNAME이라고 했었다.
+git Action Secrets에 EC2_USER라고 설정하고, workflow에는 EC2_USERNAME이라고 했었다.
 
 
 ### 2026 03.12 20:50
