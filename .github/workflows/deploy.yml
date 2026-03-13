@@ -37,7 +37,12 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-gradle-
 
-      # ✅ 테스트 실행
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v6
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          aws-region: ${{ vars.AWS_REGION }}
+
       - name: Run tests
         env:
           SPRING_PROFILES_ACTIVE: prod
@@ -47,26 +52,21 @@ jobs:
           TEAM_NAME: ${{ secrets.TEAM_NAME }}
         run: ./gradlew test --info
 
-      # ✅ JAR 빌드
       - name: Build JAR
+        env:
+          SPRING_PROFILES_ACTIVE: prod
+          DB_URL: ${{ secrets.DB_URL }}
+          DB_USERNAME: ${{ secrets.DB_USERNAME }}
+          DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+          TEAM_NAME: ${{ secrets.TEAM_NAME }}
         run: ./gradlew bootJar
 
-      # ✅ AWS 인증 (OIDC)
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v6
-        with:
-          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
-          aws-region: ${{ vars.AWS_REGION }}
-
-      # ✅ ECR 로그인
       - name: Login to ECR
         uses: aws-actions/amazon-ecr-login@v2
 
-      # ✅ Docker build & push
       - name: Build and push Docker image
         run: |
           SHORT_SHA=$(echo ${{ github.sha }} | cut -c1-7)
-
           IMAGE_URI=${{ vars.AWS_ACCOUNT_ID }}.dkr.ecr.${{ vars.AWS_REGION }}.amazonaws.com/${{ vars.ECR_REPOSITORY }}
 
           docker build --platform linux/arm64 -t $IMAGE_URI:$SHORT_SHA .
