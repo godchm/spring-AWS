@@ -80,3 +80,8 @@ git Action Screts에 EC2_USER라고 설정하고, workflow에는 EC2_USERNAME이
 ### 2026 03.12 20:50
 **구현 기능**
 -application-local 수정
+
+
+### 2026 03.13 11:30
+**구현 기능**
+-오류 수정

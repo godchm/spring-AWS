@@ -52,7 +52,7 @@ public class MemberController {
         }
     }
 
-//
+// 멤버 사진 등록
     @PostMapping("/api/members/{memberId}/profile-image")
     public ResponseEntity<FileUploadResponse> upload(
             @PathVariable Long memberId,
@@ -61,6 +61,7 @@ public class MemberController {
         return ResponseEntity.ok(new FileUploadResponse(key));
     }
 
+    // 멤버 사진 조회
     @GetMapping("/api/members/{memberId}/profile-image")
     public ResponseEntity<FileDownloadUrlResponse> getDownloadUrl(@PathVariable Long memberId) {
         URL url = memberService.getDownloadUrl(memberId);
